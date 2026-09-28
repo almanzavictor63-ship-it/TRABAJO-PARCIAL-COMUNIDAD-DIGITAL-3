@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NextCapital: financiamiento de capital de trabajo para MYPE sin historial crediticio." />
+  <title>NextCapital — Financiamiento para tu empresa</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A1F44'/><text y='22' x='4' font-size='18' font-family='sans-serif' fill='%232B7FE0' font-weight='700'>N</text></svg>" />
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar">
+  <div class="container navbar-inner">
+    <a href="#" class="logo">Next<span>Capital</span></a>
+    <ul class="nav-links">
+      <li><a href="#beneficios">Beneficios</a></li>
+      <li><a href="#como-funciona">Cómo funciona</a></li>
+      <li><a href="#registro">Solicitar</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="btn-nav ghost">Iniciar sesión</button>
+      <a href="#registro" class="btn-nav solid">Registrate</a>
+    </div>
+    <button class="hamburger" aria-label="Menú" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mobile-menu" style="display:none;flex-direction:column;padding:16px 28px 20px;gap:12px;border-top:1px solid #BDD0EA;background:#fff;">
+    <a href="#beneficios"     style="font-size:.95rem;font-weight:500;color:#2E4A6E;padding:8px 0;">Beneficios</a>
+    <a href="#como-funciona"  style="font-size:.95rem;font-weight:500;color:#2E4A6E;padding:8px 0;">Cómo funciona</a>
+    <a href="#registro"       style="font-size:.95rem;font-weight:700;color:#2B7FE0;padding:8px 0;">Solicitar capital</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Texto -->
+      <div class="hero-copy">
+        <div class="hero-tag">Fintech MYPE · Perú</div>
+        <h1 class="hero-title">
+          Capital de trabajo<br>para tu negocio <em>hoy mismo</em>
+        </h1>
+        <p class="hero-desc">
+          Sin historial crediticio ni garantías hipotecarias. Evaluamos tus ventas digitales y flujo de caja real con inteligencia artificial.
+        </p>
+        <div class="hero-btns">
+          <a href="#registro" class="btn btn-primary">Solicitar capital</a>
+          <a href="#como-funciona" class="btn btn-outline">Ver cómo funciona</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">S/&nbsp;500<span>M+</span></div>
+            <div class="stat-label">Financiado a la fecha</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">12<span>k+</span></div>
+            <div class="stat-label">Empresas financiadas</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">48<span>h</span></div>
+            <div class="stat-label">Aprobación promedio</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ilustración -->
+      <div class="hero-illustration fade-in" aria-hidden="true">
+        <svg viewBox="0 0 340 480" xmlns="http://www.w3.org/2000/svg" fill="none" style="width:100%;max-width:290px;margin:0 auto;display:block;">
+          <circle cx="170" cy="240" r="190" fill="rgba(43,127,224,.07)"/>
+          <circle cx="170" cy="240" r="140" fill="rgba(43,127,224,.06)"/>
+          <ellipse cx="170" cy="435" rx="72" ry="11" fill="rgba(0,0,0,.18)"/>
+          <rect x="90" y="60" width="160" height="360" rx="24" fill="#0D2A5E"/>
+          <rect x="94" y="64" width="152" height="352" rx="21" fill="#0A1F44"/>
+          <rect x="100" y="78" width="140" height="310" rx="14" fill="#0F2E6A"/>
+          <rect x="148" y="72" width="44" height="10" rx="5" fill="#0D2A5E"/>
+          <text x="112" y="100" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,.4)">9:41</text>
+          <rect x="100" y="108" width="140" height="36" fill="rgba(43,127,224,.12)"/>
+          <circle cx="120" cy="126" r="10" fill="rgba(43,127,224,.3)"/>
+          <text x="135" y="122" font-family="Sora,sans-serif" font-size="7.5" fill="white" font-weight="700">NextCapital</text>
+          <text x="135" y="133" font-family="Inter,sans-serif" font-size="6" fill="rgba(255,255,255,.55)">Hola, Juan 👋</text>
+          <rect x="108" y="152" width="124" height="76" rx="10" fill="rgba(43,127,224,.25)"/>
+          <rect x="108" y="152" width="124" height="76" rx="10" stroke="rgba(43,127,224,.6)" stroke-width="1"/>
+          <circle cx="132" cy="172" r="12" fill="#2B7FE0"/>
+          <polyline points="126,172 131,177 139,165" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="150" y="168" font-family="Inter,sans-serif" font-size="6.5" fill="rgba(255,255,255,.8)">Crédito aprobado</text>
+          <text x="150" y="180" font-family="Sora,sans-serif" font-size="13" fill="white" font-weight="700">S/ 25,000</text>
+          <rect x="116" y="193" width="36" height="8" rx="4" fill="rgba(255,255,255,.1)"/>
+          <text x="118" y="199" font-family="Inter,sans-serif" font-size="5.5" fill="rgba(255,255,255,.7)">12 cuotas</text>
+          <rect x="157" y="193" width="42" height="8" rx="4" fill="rgba(43,127,224,.4)"/>
+          <text x="159" y="199" font-family="Inter,sans-serif" font-size="5.5" fill="white">Ver detalle →</text>
+          <text x="112" y="244" font-family="Inter,sans-serif" font-size="6" fill="rgba(255,255,255,.5)">ANÁLISIS DE VENTAS</text>
+          <rect x="112" y="250" width="116" height="5" rx="2.5" fill="rgba(255,255,255,.07)"/>
+          <rect x="112" y="250" width="82" height="5" rx="2.5" fill="#2B7FE0"/>
+          <rect x="112" y="260" width="116" height="5" rx="2.5" fill="rgba(255,255,255,.07)"/>
+          <rect x="112" y="260" width="96" height="5" rx="2.5" fill="rgba(43,127,224,.6)"/>
+          <rect x="112" y="270" width="116" height="5" rx="2.5" fill="rgba(255,255,255,.07)"/>
+          <rect x="112" y="270" width="58" height="5" rx="2.5" fill="rgba(123,184,245,.5)"/>
+          <polyline points="112,310 126,300 140,305 154,290 168,294 182,282 196,286 210,270 224,274" stroke="#2B7FE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2B7FE0"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+          <polyline points="112,310 126,300 140,305 154,290 168,294 182,282 196,286 210,270 224,274 224,320 112,320" fill="url(#cg)" opacity=".22"/>
+          <rect x="112" y="326" width="116" height="28" rx="8" fill="#2B7FE0"/>
+          <text x="170" y="344" font-family="Sora,sans-serif" font-size="8" fill="white" font-weight="600" text-anchor="middle">Solicitar capital</text>
+          <rect x="152" y="398" width="36" height="4" rx="2" fill="rgba(255,255,255,.2)"/>
+          <g transform="translate(34,148)">
+            <rect width="74" height="38" rx="8" fill="#0A1F44"/><rect width="74" height="38" rx="8" stroke="rgba(43,127,224,.4)" stroke-width="1" fill="none"/>
+            <text x="14" y="23" font-family="Inter,sans-serif" font-size="10" text-anchor="middle">⚡</text>
+            <text x="28" y="15" font-family="Inter,sans-serif" font-size="6" fill="rgba(255,255,255,.6)">Aprobación</text>
+            <text x="28" y="26" font-family="Sora,sans-serif" font-size="9" fill="white" font-weight="700">48h</text>
+          </g>
+          <g transform="translate(242,258)">
+            <rect width="74" height="38" rx="8" fill="#0A1F44"/><rect width="74" height="38" rx="8" stroke="rgba(43,127,224,.4)" stroke-width="1" fill="none"/>
+            <text x="14" y="23" font-family="Inter,sans-serif" font-size="10" text-anchor="middle">🔒</text>
+            <text x="28" y="15" font-family="Inter,sans-serif" font-size="6" fill="rgba(255,255,255,.6)">Sin garantía</text>
+            <text x="28" y="26" font-family="Sora,sans-serif" font-size="9" fill="white" font-weight="700">Ninguna</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Formulario hero -->
+      <div class="hero-form-card fade-in">
+        <p class="form-title">Solicita en minutos</p>
+        <p class="form-subtitle">Sin costo · Sin compromiso · 100% digital</p>
+        <form class="nc-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="h-nombre">Nombre</label>
+              <input type="text" id="h-nombre" placeholder="Juan" required />
+            </div>
+            <div class="form-group">
+              <label for="h-apellido">Apellido</label>
+              <input type="text" id="h-apellido" placeholder="Pérez" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="h-email">Correo electrónico</label>
+            <input type="email" id="h-email" placeholder="juan@empresa.com" required />
+          </div>
+          <div class="form-group">
+            <label for="h-tel">Celular</label>
+            <input type="tel" id="h-tel" placeholder="987 654 321" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="h-monto">Monto (S/)</label>
+              <input type="text" id="h-monto" class="input-amount" placeholder="10,000" required />
+            </div>
+            <div class="form-group">
+              <label for="h-rubro">Rubro</label>
+              <select id="h-rubro" required>
+                <option value="" disabled selected>Seleccionar</option>
+                <option>Comercio</option><option>Servicios</option>
+                <option>Gastronomía</option><option>Transporte</option>
+                <option>Manufactura</option><option>Otro</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-form">Solicitar capital</button>
+          <p class="form-trust">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Tus datos están protegidos
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ BENEFICIOS ══ -->
+<section class="benefits" id="beneficios">
+  <div class="container">
+    <div class="section-header fade-in" style="text-align:center;">
+      <span class="section-label">Por qué NextCapital</span>
+      <h2 class="section-title">Diseñado para quien la banca ignora</h2>
+      <p class="section-desc" style="margin:0 auto;">El 70&nbsp;% de las MYPE en Perú no accede al crédito formal. Nosotros cambiamos eso.</p>
+    </div>
+    <div class="benefits-pills fade-in">
+      <div class="pill-card">
+        <span class="pill-emoji">🚫</span>
+        <strong>Sin central de riesgo</strong>
+        <p>Evaluamos tus ventas reales, no tu historial crediticio.</p>
+      </div>
+      <div class="pill-card">
+        <span class="pill-emoji">🤝</span>
+        <strong>Crowdlending P2P</strong>
+        <p>Tasas competitivas directas, sin intermediarios bancarios.</p>
+      </div>
+      <div class="pill-card">
+        <span class="pill-emoji">📱</span>
+        <strong>100% digital</strong>
+        <p>De S/&nbsp;3,000 a S/&nbsp;150,000 desde tu celular o PC.</p>
+      </div>
+      <div class="pill-card">
+        <span class="pill-emoji">📅</span>
+        <strong>Pagos flexibles</strong>
+        <p>Cuotas adaptadas a tu temporada, sin penalidades.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CÓMO FUNCIONA — 8 pasos en flujo grid ══ -->
+<section class="how" id="como-funciona">
+  <div class="container">
+    <div class="section-header fade-in" style="text-align:center;">
+      <span class="section-label">Proceso</span>
+      <h2 class="section-title">De la solicitud al desembolso</h2>
+      <p class="section-desc" style="margin:0 auto;">Simple, ágil y sin burocracia. Todo 100% digital.</p>
+    </div>
+
+    <div class="steps-row-wrap fade-in">
+
+      <!-- FILA 1: pasos 1–4 -->
+      <div class="steps-track">
+        <!-- Paso 1 -->
+        <div class="sf-bubble">
+          <span class="sf-emoji">📝</span>
+          <span class="sf-num">1</span>
+        </div>
+        <div class="sf-arrow-h">→</div>
+        <!-- Paso 2 -->
+        <div class="sf-bubble">
+          <span class="sf-emoji">💰</span>
+          <span class="sf-num">2</span>
+        </div>
+        <div class="sf-arrow-h">→</div>
+        <!-- Paso 3 -->
+        <div class="sf-bubble">
+          <span class="sf-emoji">🤖</span>
+          <span class="sf-num">3</span>
+        </div>
+        <div class="sf-arrow-h">→</div>
+        <!-- Paso 4 -->
+        <div class="sf-bubble">
+          <span class="sf-emoji">📄</span>
+          <span class="sf-num">4</span>
+        </div>
+      </div>
+
+      <!-- Labels fila 1 -->
+      <div class="steps-labels">
+        <div class="sf-label">
+          <h3>Registro</h3>
+          <p>Completa tus datos y crea tu cuenta en la plataforma.</p>
+        </div>
+        <div class="sf-label">
+          <h3>Solicitud</h3>
+          <p>Define el monto y propósito para tu negocio.</p>
+        </div>
+        <div class="sf-label">
+          <h3>Evaluación IA</h3>
+          <p>Analizamos tus flujos reales y ventas digitales.</p>
+        </div>
+        <div class="sf-label">
+          <h3>Garantía</h3>
+          <p>Sube digitalmente la documentación de respaldo.</p>
+        </div>
+      </div>
+
+      <!-- Conector entre filas -->
+      <div style="display:flex;justify-content:flex-end;padding:8px 0 14px;opacity:.25;">
+        <svg width="100%" height="32" viewBox="0 0 800 32" fill="none" preserveAspectRatio="none">
+          <path d="M798 2 Q798 30 750 30 L50 30 Q2 30 2 2" stroke="#2B7FE0" stroke-width="2" fill="none" stroke-dasharray="6 3"/>
+        </svg>
+      </div>
+
+      <!-- FILA 2: pasos 5–8 — orden invertido visualmente para fluir de izq a der -->
+      <div class="steps-track">
+        <!-- Paso 5 -->
+        <div class="sf-bubble">
+          <span class="sf-emoji">💬</span>
+          <span class="sf-num">5</span>
+        </div>
+        <div class="sf-arrow-h">→</div>
+        <!-- Paso 6 -->
+        <div class="sf-bubble sf-bubble--accent">
+          <span class="sf-emoji">✅</span>
+          <span class="sf-num">6</span>
+        </div>
+        <div class="sf-arrow-h">→</div>
+        <!-- Paso 7 -->
+        <div class="sf-bubble sf-bubble--accent">
+          <span class="sf-emoji">✍️</span>
+          <span class="sf-num">7</span>
+        </div>
+        <div class="sf-arrow-h">→</div>
+        <!-- Paso 8 -->
+        <div class="sf-bubble sf-bubble--final">
+          <span class="sf-emoji">🚀</span>
+          <span class="sf-num">8</span>
+        </div>
+      </div>
+
+      <!-- Labels fila 2 -->
+      <div class="steps-labels">
+        <div class="sf-label">
+          <h3>Validación</h3>
+          <p>Un asesor te contacta por WhatsApp de forma ágil.</p>
+        </div>
+        <div class="sf-label">
+          <h3>Aprobación</h3>
+          <p>El sistema emite la confirmación de crédito aprobado.</p>
+        </div>
+        <div class="sf-label">
+          <h3>Firma digital</h3>
+          <p>Formalizas condiciones y contrato de forma transparente.</p>
+        </div>
+        <div class="sf-label">
+          <h3>Desembolso</h3>
+          <p>El capital llega directo a tu cuenta. ¡Listo para invertir!</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ REGISTRO ══ -->
+<section class="register-section" id="registro">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label" style="color:#7BB8F5;">Solicitar ahora</span>
+      <h2 class="register-title">Empieza en menos de 5 minutos</h2>
+      <p class="register-desc">Sin costo de evaluación &middot; Sin compromiso &middot; Oferta en 24 horas</p>
+    </div>
+    <div class="register-form-inline fade-in">
+      <form class="nc-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="r-nombre">Nombre</label>
+            <input type="text" id="r-nombre" placeholder="Juan" required />
+          </div>
+          <div class="form-group">
+            <label for="r-apellido">Apellido</label>
+            <input type="text" id="r-apellido" placeholder="Pérez" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="r-email">Correo electrónico</label>
+          <input type="email" id="r-email" placeholder="juan@empresa.com" required />
+        </div>
+        <div class="form-group">
+          <label for="r-tel">Celular</label>
+          <input type="tel" id="r-tel" placeholder="987 654 321" required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="r-monto">Monto necesario (S/)</label>
+            <input type="text" id="r-monto" class="input-amount" placeholder="10,000" required />
+          </div>
+          <div class="form-group">
+            <label for="r-rubro">Rubro</label>
+            <select id="r-rubro" required>
+              <option value="" disabled selected>Seleccionar</option>
+              <option>Comercio</option><option>Servicios</option>
+              <option>Gastronomía</option><option>Transporte</option>
+              <option>Manufactura</option><option>Otro</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="r-ruc">RUC (opcional)</label>
+          <input type="text" id="r-ruc" placeholder="20XXXXXXXXX" maxlength="11" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-form">Solicitar mi capital</button>
+        <p class="form-trust">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Datos protegidos · Sin costo de evaluación
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER COMPLETO ══ -->
+<footer class="footer-full">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div class="footer-logo">Next<span>Capital</span></div>
+        <p class="footer-about">
+          NextCapital es una marca de <strong>NC Finance SAC</strong>, empresa registrada ante
+          la Superintendencia de Banca, Seguros y AFP del Perú (RES. SBS 2026).
+          <a href="#">Más detalles aquí</a>.
+        </p>
+        <div class="footer-social">
+          <a href="#" aria-label="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.14 8.14 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7s-.3-1.9-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.4 3 12 3 12 3s-4.4 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5.2 1 7 1 7S.7 9.1.7 11.2v2c0 2 .3 4 .3 4s.3 1.9 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.3 21.2 12 21.3 12 21.3s4.4 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.7 1.2-2.7s.3-2.1.3-4.2v-1.9C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Conoce más</h4>
+        <ul>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Blog &amp; Artículos</a></li>
+          <li><a href="#">Centro de ayuda</a></li>
+          <li><a href="#">Conviértete en asesor</a></li>
+          <li><a href="#">Trabaja con nosotros</a></li>
+          <li><a href="#">Canal ético</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Contacto</h4>
+        <ul class="footer-contact">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:hola@nextcapital.pe">hola@nextcapital.pe</a>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4l-2.5-.3c-.6-.1-1.1.1-1.5.5l-1.8 1.8c-2.6-1.4-4.8-3.5-6.2-6.1l1.8-1.8c.4-.4.6-.9.5-1.5l-.3-2.5C7.4 3.7 6.6 3 5.7 3H3.3C2.3 3 1.5 3.8 1.6 4.8 2.5 12.5 9.6 19.5 17.3 20.5c1 .1 1.8-.7 1.8-1.7V17c-.1-.9-.8-1.6-1.6-1.6z"/></svg>
+            <span>913 231 396</span>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Av. Larco 1301, Of. 602, Miraflores, Lima</span>
+          </li>
+        </ul>
+        <div class="footer-libro">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+          <a href="#">Libro de Reclamaciones</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-legal">
+      <p><strong style="color:rgba(255,255,255,.5);">Financiamiento capital de trabajo:</strong> NextCapital, a través de NC Finance SAC, conecta emprendedores con inversionistas privados bajo el modelo P2P (crowdlending). No realiza intermediación financiera regulada. Los contratos de financiamiento son de 6, 12, 18 y 24 meses. La Tasa de Costo Efectivo Anual (TCEA) varía según el perfil de cada solicitante.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 NextCapital / NC Finance SAC. Todos los derechos reservados.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Política de privacidad</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
