@@ -40,8 +40,30 @@ a { color: inherit; text-decoration: none; }
 /* ── Navbar ── */
 .navbar { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid var(--border); }
 .navbar-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-.logo { font-family: var(--fh); font-size: 1.25rem; font-weight: 700; color: var(--navy); letter-spacing: -.4px; }
-.logo span { color: var(--blue); }
+/* ── Logo ── */
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--fh); font-size: 1.22rem; font-weight: 700;
+  color: var(--navy); letter-spacing: -.3px; text-decoration: none;
+}
+.logo-icon { width: 36px; height: 36px; flex-shrink: 0; }
+.logo-wordmark { display: flex; align-items: baseline; gap: 0; }
+.logo-wordmark em {
+  font-style: normal;
+  background: linear-gradient(135deg, #2B7FE0 0%, #00C9D4 50%, #3DD68C 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+/* In navbar, "Next" is navy, "Capital" is gradient */
+.logo .logo-wordmark::before { content: 'Next'; color: var(--navy); }
+/* In footer (light variant), both parts are white / light */
+.logo-wordmark--light { color: rgba(255,255,255,.9); }
+.logo-wordmark--light em {
+  background: linear-gradient(135deg, #7EC8F8 0%, #3DD68C 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.logo-wordmark--light::before { content: 'Next'; color: rgba(255,255,255,.9); }
 .nav-links { display: flex; gap: 32px; list-style: none; }
 .nav-links a { font-size: .9rem; font-weight: 500; color: var(--slate); transition: var(--tr); }
 .nav-links a:hover { color: var(--navy); }
@@ -100,6 +122,21 @@ a { color: inherit; text-decoration: none; }
   background: #fff; border-radius: 18px; padding: 32px 28px;
   box-shadow: 0 24px 64px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.1);
 }
+/* Cuando el hero-form-card es la tarjeta precalifica, el padding va dentro */
+.hero-form-card.precalifica-card {
+  padding: 0;
+  border-radius: 22px;
+  align-self: start;
+  box-shadow: 0 32px 80px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.08);
+}
+/* Divider entre tabs y campo tel */
+.pc-divider {
+  display: flex; align-items: center; gap: 10px;
+  margin: 16px 0 8px; font-size: .75rem; color: #8FA3BE; font-weight: 500;
+}
+.pc-divider::before, .pc-divider::after {
+  content: ''; flex: 1; height: 1px; background: #E8EFF8;
+}
 .form-title { font-family: var(--fh); font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
 .form-subtitle { font-size: .82rem; color: var(--slate); margin-bottom: 18px; }
 .form-group { margin-bottom: 13px; }
@@ -117,6 +154,215 @@ a { color: inherit; text-decoration: none; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
 .btn-form { width: 100%; justify-content: center; padding: 14px; font-size: .96rem; border-radius: 9px; margin-top: 4px; }
 .form-trust { display: flex; align-items: center; gap: 7px; font-size: .75rem; color: var(--slate); margin-top: 10px; justify-content: center; }
+
+/* ── PRECALIFICA CARD ── */
+.precalifica-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,.32), 0 0 0 1px rgba(255,255,255,.08);
+}
+.pc-header {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  padding: 22px 28px 18px;
+  text-align: center;
+  border-bottom: 1px solid rgba(43,127,224,.2);
+}
+.pc-title {
+  font-family: var(--fh);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3px;
+}
+.pc-sub {
+  font-size: .82rem;
+  color: rgba(255,255,255,.65);
+}
+
+/* Tabs moneda */
+.currency-tabs {
+  display: flex;
+  margin: 18px 24px 0;
+  background: #EDF2FA;
+  border-radius: 10px;
+  padding: 4px;
+  gap: 4px;
+}
+.cur-tab {
+  flex: 1;
+  padding: 9px 0;
+  border: none;
+  border-radius: 7px;
+  font-family: var(--fb);
+  font-size: .88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--tr);
+  background: transparent;
+  color: var(--slate);
+}
+.cur-tab.active {
+  background: #fff;
+  color: var(--navy);
+  box-shadow: 0 1px 6px rgba(10,31,68,.1);
+}
+
+.pc-form { padding: 18px 24px 22px; }
+
+.pc-label {
+  display: block;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.req { color: var(--blue); }
+
+/* Display monto grande */
+.pc-amount-wrap { margin-bottom: 6px; }
+.pc-amount-display {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.pc-currency-symbol {
+  font-family: var(--fh);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--slate);
+}
+.pc-amount-val {
+  font-family: var(--fh);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -.5px;
+  line-height: 1;
+}
+
+/* Slider */
+.pc-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(to right, var(--blue) 0%, var(--blue) var(--pct, 15%), #C8D8EF var(--pct, 15%), #C8D8EF 100%);
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.pc-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--blue);
+  box-shadow: 0 2px 8px rgba(43,127,224,.35);
+  cursor: pointer;
+  transition: box-shadow .15s;
+}
+.pc-slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 6px rgba(43,127,224,.15);
+}
+.pc-slider::-moz-range-thumb {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--blue);
+  box-shadow: 0 2px 8px rgba(43,127,224,.3);
+  cursor: pointer;
+}
+.pc-range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: .72rem;
+  color: #8FA3BE;
+  margin-bottom: 2px;
+}
+
+/* Tasa */
+.pc-tasa {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .82rem;
+  color: var(--slate);
+  background: #EDF2FA;
+  border-radius: 8px;
+  padding: 9px 12px;
+  margin-bottom: 2px;
+}
+.pc-tasa svg { flex-shrink:0; color: var(--blue); }
+.pc-tasa strong { color: var(--navy); }
+
+/* Tel input */
+.pc-tel-wrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--border);
+  border-radius: 9px;
+  overflow: hidden;
+  transition: var(--tr);
+}
+.pc-tel-wrap:focus-within {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(43,127,224,.15);
+}
+.pc-flag {
+  padding: 11px 12px;
+  font-size: .85rem;
+  background: #F4F8FE;
+  border-right: 1.5px solid var(--border);
+  color: var(--navy);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.pc-tel-wrap input {
+  border: none !important;
+  box-shadow: none !important;
+  flex: 1;
+  padding: 11px 12px;
+  font-size: .9rem;
+  color: var(--navy);
+  outline: none;
+  background: #fff;
+}
+
+/* Botón precalifica */
+.pc-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 15px;
+  font-size: 1rem;
+  border-radius: 11px;
+  margin-top: 16px;
+  letter-spacing: .2px;
+  background: var(--blue);
+  color: #fff;
+  transition: var(--tr);
+  box-shadow: 0 4px 16px rgba(43,127,224,.35);
+}
+.pc-btn:hover {
+  background: var(--blue-dk);
+  box-shadow: 0 6px 20px rgba(43,127,224,.45);
+  transform: translateY(-1px);
+}
+
+.pc-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: .73rem;
+  color: #8FA3BE;
+  margin-top: 11px;
+  text-align: center;
+}
+.pc-trust svg { flex-shrink:0; stroke: var(--blue); }
+.pc-trust span { display:flex; align-items:center; gap:4px; }
 
 /* ── BENEFICIOS — 4 cards ── */
 .benefits { padding: 72px 0; background: #fff; }
@@ -254,8 +500,7 @@ a { color: inherit; text-decoration: none; }
 /* ── FOOTER COMPLETO ── */
 .footer-full { background: #07152E; padding: 60px 0 0; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1.2fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); }
-.footer-logo { font-family: var(--fh); font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
-.footer-logo span { color: var(--blue); }
+.footer-logo { display: flex; align-items: center; gap: 10px; font-family: var(--fh); font-size: 1.22rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
 .footer-about { font-size: .83rem; color: rgba(255,255,255,.6); line-height: 1.7; margin-bottom: 22px; }
 .footer-about strong { color: rgba(255,255,255,.85); }
 .footer-about a { color: var(--blue); text-decoration: underline; }
