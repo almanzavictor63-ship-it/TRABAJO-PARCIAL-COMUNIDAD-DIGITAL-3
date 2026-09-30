@@ -21,7 +21,7 @@
     </ul>
     <div class="nav-cta">
       <button class="btn-nav ghost">Iniciar sesión</button>
-      <a href="#registro" class="btn-nav solid">Registrate</a>
+      <a href="#registro" class="btn-nav solid">Solicitar capital</a>
     </div>
     <button class="hamburger" aria-label="Menú" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
@@ -49,7 +49,7 @@
           Sin historial crediticio ni garantías hipotecarias. Evaluamos tus ventas digitales y flujo de caja real con inteligencia artificial.
         </p>
         <div class="hero-btns">
-          <a href="#registro" class="btn btn-primary">Solicitar capital</a>
+          <a href="#registro" class="btn btn-primary">Solicitar financiamiento</a>
           <a href="#como-funciona" class="btn btn-outline">Ver cómo funciona</a>
         </div>
         <div class="hero-stats">
@@ -121,49 +121,63 @@
         </svg>
       </div>
 
-      <!-- Formulario hero -->
-      <div class="hero-form-card fade-in">
-        <p class="form-title">Solicita en minutos</p>
-        <p class="form-subtitle">Sin costo · Sin compromiso · 100% digital</p>
-        <form class="nc-form" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="h-nombre">Nombre</label>
-              <input type="text" id="h-nombre" placeholder="Juan" required />
+      <!-- Formulario hero — Precalifica -->
+      <div class="hero-form-card precalifica-card fade-in">
+        <div class="pc-header">
+          <p class="pc-title">Solicítalo aquí</p>
+          <p class="pc-sub">Obtén tu capital rápido y sin garantías</p>
+        </div>
+
+        <!-- Selector moneda -->
+        <div class="currency-tabs">
+          <button class="cur-tab active" data-cur="PEN" type="button">🇵🇪 Soles</button>
+          <button class="cur-tab" data-cur="USD" type="button">🇺🇸 Dólares</button>
+        </div>
+
+        <form class="nc-form pc-form" novalidate>
+          <!-- Monto -->
+          <div class="pc-amount-wrap">
+            <label class="pc-label">Monto del préstamo <span class="req">*</span></label>
+            <div class="pc-amount-display">
+              <span class="pc-currency-symbol" id="pc-sym">S/</span>
+              <span class="pc-amount-val" id="pc-val">25,000</span>
             </div>
-            <div class="form-group">
-              <label for="h-apellido">Apellido</label>
-              <input type="text" id="h-apellido" placeholder="Pérez" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="h-email">Correo electrónico</label>
-            <input type="email" id="h-email" placeholder="juan@empresa.com" required />
-          </div>
-          <div class="form-group">
-            <label for="h-tel">Celular</label>
-            <input type="tel" id="h-tel" placeholder="987 654 321" required />
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="h-monto">Monto (S/)</label>
-              <input type="text" id="h-monto" class="input-amount" placeholder="10,000" required />
-            </div>
-            <div class="form-group">
-              <label for="h-rubro">Rubro</label>
-              <select id="h-rubro" required>
-                <option value="" disabled selected>Seleccionar</option>
-                <option>Comercio</option><option>Servicios</option>
-                <option>Gastronomía</option><option>Transporte</option>
-                <option>Manufactura</option><option>Otro</option>
-              </select>
+            <input
+              type="range"
+              id="pc-slider"
+              class="pc-slider"
+              min="3000" max="150000" step="1000" value="25000"
+            />
+            <div class="pc-range-labels">
+              <span id="pc-min-label">S/ 3,000</span>
+              <span id="pc-max-label">S/ 150,000</span>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-form">Solicitar capital</button>
-          <p class="form-trust">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-            Tus datos están protegidos
-          </p>
+
+          <!-- Tasa -->
+          <div class="pc-tasa">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            Tasa de interés mensual desde: <strong>1.05%</strong>
+          </div>
+
+          <!-- Celular para lead rápido -->
+          <div class="pc-divider">Tu número de contacto</div>
+          <label for="pc-tel" class="pc-label">Celular <span class="req">*</span></label>
+          <div class="pc-tel-wrap">
+            <span class="pc-flag">🇵🇪 +51</span>
+            <input type="tel" id="pc-tel" placeholder="987 654 321" maxlength="12" required />
+          </div>
+          <div id="pc-tel-error"></div>
+
+          <button type="submit" class="btn pc-btn">Precalifica ahora →</button>
+
+          <div class="pc-trust">
+            <span>🛡️ Sin costo</span>
+            <span style="color:#C8D8EF">·</span>
+            <span>Sin historial crediticio</span>
+            <span style="color:#C8D8EF">·</span>
+            <span>100% digital</span>
+          </div>
         </form>
       </div>
 
@@ -459,5 +473,48 @@
 </footer>
 
 <script src="app.js"></script>
+<script src="chatbot-nextcapital.js"></script>
+
+<!-- Slider precalifica — lógica directa, independiente de app.js -->
+<script>
+(function() {
+  var slider   = document.getElementById('pc-slider');
+  var valEl    = document.getElementById('pc-val');
+  var symEl    = document.getElementById('pc-sym');
+  var minLbl   = document.getElementById('pc-min-label');
+  var maxLbl   = document.getElementById('pc-max-label');
+
+  if (!slider) return;
+
+  function updateSlider() {
+    var min = +slider.min, max = +slider.max, val = +slider.value;
+    var pct = ((val - min) / (max - min)) * 100;
+    slider.style.setProperty('--pct', pct + '%');
+    // Forzar repaint del background
+    slider.style.background = 'linear-gradient(to right,#2B7FE0 0%,#2B7FE0 ' + pct + '%,#C8D8EF ' + pct + '%,#C8D8EF 100%)';
+    if (valEl) valEl.textContent = val.toLocaleString('es-PE');
+  }
+
+  slider.addEventListener('input', updateSlider);
+  slider.addEventListener('change', updateSlider);
+  updateSlider();
+
+  document.querySelectorAll('.cur-tab').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.cur-tab').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var isPEN = btn.dataset.cur === 'PEN';
+      if (symEl)   symEl.textContent   = isPEN ? 'S/' : 'US$';
+      if (minLbl)  minLbl.textContent  = isPEN ? 'S/ 3,000' : 'US$ 1,000';
+      if (maxLbl)  maxLbl.textContent  = isPEN ? 'S/ 150,000' : 'US$ 40,000';
+      slider.min   = isPEN ? 3000   : 1000;
+      slider.max   = isPEN ? 150000 : 40000;
+      slider.step  = isPEN ? 1000   : 500;
+      slider.value = isPEN ? 25000  : 7000;
+      updateSlider();
+    });
+  });
+})();
+</script>
 </body>
 </html>
